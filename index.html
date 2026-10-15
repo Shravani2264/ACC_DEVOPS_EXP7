@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample Web App · Experiment 8</title>
+  <style>
+    :root { --bg:#eef3f8; --ink:#14263b; --muted:#4f647a; --line:#c6d3e0; --accent:#2b6cb0; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#0f1a26; --ink:#e3ecf5; --muted:#9db0c4; --line:#2a3b4e; --accent:#7fb2e8; }
+    }
+    body { margin:0; background:var(--bg); color:var(--ink);
+           font-family: "Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.6; }
+    main { max-width:680px; margin:0 auto; padding:4rem 1.5rem; }
+    h1 { font-size:2.2rem; line-height:1.2; margin:0 0 .5rem; }
+    p { color:var(--muted); margin:0 0 2rem; }
+    ol { padding:0; margin:0; list-style:none; counter-reset:s; border-top:1px solid var(--line); }
+    li { counter-increment:s; padding:1rem 0 1rem 3rem; border-bottom:1px solid var(--line); position:relative; }
+    li::before { content:counter(s); position:absolute; left:0; top:.9rem; width:2rem; height:2rem;
+                 border:2px solid var(--accent); border-radius:50%; display:grid; place-items:center;
+                 font-weight:600; color:var(--accent); }
+    strong { display:block; }
+    span { color:var(--muted); font-size:.95rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Sample Web App</h1>
+    <p>Built by GitHub Actions, pushed to Docker Hub, and running as a Kubernetes Deployment.</p>
+    <ol>
+      <li><strong>Commit to main</strong><span>A push to the main branch starts the CI/CD workflow.</span></li>
+      <li><strong>Build and push the image</strong><span>The runner builds this nginx image and tags it v1.0.&lt;run number&gt;.</span></li>
+      <li><strong>Deploy and scale</strong><span>kubectl applies the Deployment and scales it to 5 replicas.</span></li>
+      <li><strong>Monitor</strong><span>Metrics Server, Prometheus and Grafana track CPU and memory per pod.</span></li>
+    </ol>
+  </main>
+</body>
+</html>
