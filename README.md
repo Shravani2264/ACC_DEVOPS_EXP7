@@ -1,4 +1,4 @@
-# Experiment 8: Deploying Applications, CI/CD Pipeline, and Cluster Monitoring
+# Experiment 7: Deploying Applications, CI/CD Pipeline, and Cluster Monitoring
 
 A static nginx web app that is built and pushed to Docker Hub by GitHub Actions, deployed and scaled
 on Minikube, and monitored with Metrics Server / Minikube Dashboard or Prometheus + Grafana.
